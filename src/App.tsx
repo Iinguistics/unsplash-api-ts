@@ -5,7 +5,7 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <div className="container">
+    <div className="container" id="app">
       <SearchBar />
       <Route 
       path='/'

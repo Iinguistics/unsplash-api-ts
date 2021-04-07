@@ -1,22 +1,30 @@
 import React, { useState } from 'react'
+import { History } from 'history'
 import '../stylesheets/SearchBar.css'
 
 
 
-  const SearchBar: React.FC = () => {
+  interface Props{
+    history: History;
+  }
+
+  const SearchBar: React.FC<Props> = () => {
     const [term, setTerm] = useState("");
 
 
-   const termHandler = (event: React.ChangeEvent<HTMLInputElement>)=>{
+   const termHandler = (event:any)=>{
     event.preventDefault();
-   
+    //console.log()
    }
+
+
+   
 
 
 
     return (
         <div>
-          <form className="searchbar" onSubmit={ ()=> termHandler}>
+          <form className="searchbar" onSubmit={ termHandler}>
           <label>Image Search</label>
           <input
             value={term}

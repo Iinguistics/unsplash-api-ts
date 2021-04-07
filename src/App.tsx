@@ -7,11 +7,7 @@ function App() {
   return (
     <div className="container" id="app">
       <SearchBar />
-      <Route 
-      path='/'
-      exact
-      component = { Home }
-      />
+      <Route path='/' exact component = { Home } />
       
     </div>
   );

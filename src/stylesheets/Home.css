@@ -1,0 +1,63 @@
+.randomPhotosGrid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px 10px;
+}
+
+.grid-item {
+    width: 350px;
+    height: auto;
+}
+.grid-item:hover{
+    transition:.3s;
+    background-color:rgba(0,0,0,5);
+}
+
+
+.hover_img div { 
+    position:relative; 
+}
+
+
+
+.hover_img div .photographer { 
+    position:absolute; 
+    display:none; 
+    z-index:99; 
+    bottom: 1%; 
+    left: 5%;
+}
+.hover_img div:hover .photographer { 
+    color: #0385E6;
+    font-weight: 800;
+    display:block; 
+    background-color: #333;
+    padding: 12px;
+}
+
+
+.hover_img div .download-img { 
+    position:absolute; 
+    display:none; 
+    z-index:99; 
+    top: 1%; 
+    left: 5%;
+}
+.hover_img div:hover .download-img { 
+    color: #0385E6;
+    font-weight: 800;
+    display:block; 
+    background-color: #333;
+    padding: 12px;
+}
+
+
+
+
+@media(max-width: 767px) {
+    .randomPhotosGrid{
+     display: grid;
+     grid-template-columns: auto;
+    }
+ 
+ }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-//import { History } from 'history'
+import { RouteComponentProps, withRouter } from 'react-router';
 import '../stylesheets/SearchBar.css'
 
 
@@ -8,13 +8,16 @@ import '../stylesheets/SearchBar.css'
   //   history: History;
   // }
 
-  const SearchBar: React.FC = () => {
+  type SomeComponentProps = RouteComponentProps;
+
+  const SearchBar: React.FC<SomeComponentProps> = ({ history }) => {
     const [term, setTerm] = useState("");
 
 
    const termHandler = (event:any)=>{
     event.preventDefault();
-    //console.log()
+    console.log('ran');
+    history.push(`/search/${term}`);
    }
 
 
@@ -40,5 +43,5 @@ import '../stylesheets/SearchBar.css'
     )
 }
 
-export default SearchBar
+export default withRouter(SearchBar);
 

@@ -6,7 +6,7 @@ import '../stylesheets/Home.css'
 
 const Home: React.FC = () => {
     const [randomImages, setRandomImages] = useState([]);
-
+    const [loading, setLoading] = useState(false);
     
     const fetchRandomImages = async()=>{
         const { data } = await axios.get('https://api.unsplash.com/photos', {
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
               )        
            })
        }else{
-           return <Spinner />
+           setLoading(true);
        }
     }
      
@@ -46,6 +46,7 @@ const Home: React.FC = () => {
     return (
         <>
         <div className="randomPhotosGrid mt-5 container">
+            {loading && <span className="m-auto"><Spinner /> </span> }
           {renderRandomImages()}
         </div>
       </>

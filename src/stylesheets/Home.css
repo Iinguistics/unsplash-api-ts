@@ -10,7 +10,6 @@
 }
 .grid-item:hover{
     transition:.3s;
-    background-color:rgba(0,0,0,5);
 }
 
 

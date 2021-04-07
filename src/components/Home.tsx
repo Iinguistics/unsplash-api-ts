@@ -28,16 +28,15 @@ const Home: React.FC = () => {
        if(randomImages){
           return randomImages.map((image:any)=>{
               return( 
-            <div className="randomPhotosGrid mt-5">
-              <div className="hover_img" >
-                <div >
+            
+              <div className="hover_img">
+                <div>
                 <a href={`https://unsplash.com/@${image.user.username}`} target="_blank" className="photographer" rel="noopener noreferrer">
                 By {image.user.username}</a>
                 <a href={image.links.download} target="_blank" className="download-img" rel="noopener noreferrer">Download</a>
-                <img className="grid-item" src={image.urls.regular} alt={image.alt_description} />
+                <img className="grid-item col-sm" src={image.urls.regular} alt={image.alt_description} />
               </div>
             </div>
-          </div>
               )        
            })
        }else{
@@ -47,11 +46,13 @@ const Home: React.FC = () => {
      
 
     return (
-        <div >
-       
-              {renderRandomImages()}
+        <>
+        
+        <div className="randomPhotosGrid mt-5 container">
+          {renderRandomImages()}
+        </div>
 
-    </div>
+      </>
     )
 }
 

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { History } from 'history'
+//import { History } from 'history'
 import '../stylesheets/SearchBar.css'
 
 
 
-  interface Props{
-    history: History;
-  }
+  // interface Props{
+  //   history: History;
+  // }
 
-  const SearchBar: React.FC<Props> = () => {
+  const SearchBar: React.FC = () => {
     const [term, setTerm] = useState("");
 
 

@@ -12,7 +12,6 @@ import '../stylesheets/SearchBar.css'
 
    const termHandler = (event: any )=>{
     event.preventDefault();
-    console.log('ran');
     history.push(`/search/${term}`);
    }
 

@@ -16,7 +16,6 @@ const Home: React.FC = () => {
         }
       });
       setRandomImages(data);
-      console.log(data)
     }
 
     useEffect(()=>{
@@ -28,7 +27,6 @@ const Home: React.FC = () => {
        if(randomImages){
           return randomImages.map((image:any)=>{
               return( 
-            
               <div className="hover_img">
                 <div>
                 <a href={`https://unsplash.com/@${image.user.username}`} target="_blank" className="photographer" rel="noopener noreferrer">
@@ -47,11 +45,9 @@ const Home: React.FC = () => {
 
     return (
         <>
-        
         <div className="randomPhotosGrid mt-5 container">
           {renderRandomImages()}
         </div>
-
       </>
     )
 }

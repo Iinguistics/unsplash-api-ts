@@ -4,30 +4,24 @@ import '../stylesheets/SearchBar.css'
 
 
 
-  // interface Props{
-  //   history: History;
-  // }
-
   type SomeComponentProps = RouteComponentProps;
 
   const SearchBar: React.FC<SomeComponentProps> = ({ history }) => {
     const [term, setTerm] = useState("");
 
 
-   const termHandler = (event:any)=>{
+   const termHandler = (event: any )=>{
     event.preventDefault();
     console.log('ran');
     history.push(`/search/${term}`);
    }
 
 
-   
-
 
 
     return (
         <div>
-          <form className="searchbar" onSubmit={ termHandler}>
+          <form className="searchbar" onSubmit={termHandler}>
           <label>Image Search</label>
           <input
             value={term}
@@ -36,9 +30,8 @@ import '../stylesheets/SearchBar.css'
             className="form-input"
             onChange={(e)=> setTerm(e.target.value)}
             />
-            <i className="fa fa-camera-retro mt-1"></i>
-        </form>
-            
+            <i className="fa fa-camera-retro mt-1" onClick={(e)=> termHandler(e)}></i>
+          </form>
         </div>
     )
 }
